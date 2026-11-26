@@ -118,7 +118,7 @@
   }
   .portrait {
     width: 9rem;
-    height: 9rem;
+    height: 12rem;
     object-fit: cover;
     border-radius: 6px;
     background: var(--pixel);
@@ -259,7 +259,7 @@
     .array, .array canvas { width: 12.5rem; }
     .array canvas { height: 12.5rem; }
     .bio { grid-template-columns: 1fr; gap: 1.5rem; margin-top: 3.5rem; }
-    .portrait { width: 7.5rem; height: 7.5rem; }
+    .portrait { width: 7.5rem; height: 10rem; }
     .dated li,
     .background .dated li { grid-template-columns: 1fr; gap: 0; }
     .tapeouts thead { display: none; }
@@ -285,7 +285,7 @@
     </div>
     <figure class="array">
       <canvas id="array" width="240" height="240" role="img" tabindex="0"
-        aria-label="Animation of single-photon counts building up on a 64 by 64 SPAD array until the initials DS appear. Press Enter to replay."></canvas>
+        aria-label="Animation of single-photon counts building up on a 64 by 64 SPAD array until the initials DHS appear. Press Enter to replay."></canvas>
       <figcaption>Single-photon counts building up on a 64&nbsp;×&nbsp;64 SPAD array. Click to replay.</figcaption>
     </figure>
   </header>
@@ -293,7 +293,7 @@
   <main>
 
     <div class="bio">
-      <img class="portrait" src="profile.jpg" alt="Portrait of Doo-Hee Son" width="144" height="144" onerror="this.classList.add('missing')">
+      <img class="portrait" src="profile.jpg" alt="Portrait of Doo-Hee Son" width="144" height="192" onerror="this.classList.add('missing')">
       <div>
         <p>I am a Post-Master's Researcher in the Advanced Semiconductor Devices and Systems Lab at Yonsei University, working with Prof. Myung-Jae Lee. I study CMOS single-photon avalanche diodes (SPADs): how junction doping-profile engineering can improve their performance, and how device structure can keep them stable under the gamma-ray doses they would meet in space.</p>
         <p>My work runs from Sentaurus TCAD simulation through chip design, with five SPAD tape-outs so far, to electrical and optical characterization and on-site gamma-ray irradiation tests. I began SPAD research as an undergraduate researcher at the Korea Institute of Science and Technology (KIST), under the same advisor.</p>
@@ -478,6 +478,7 @@
   var TRIALS_PER_STEP = 360;  // photon arrivals per batch
   var DURATION = 2600;        // ms
   var DARK = 0.02;           // relative dark count probability
+  var LABEL = 'DHS';         // letters that emerge from the photon counts
   var COLORS = { pixel: '#E8EBF3', photon: '#2F55E4' };
   var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
@@ -499,16 +500,17 @@
     var family = '"Familjen Grotesk", "Helvetica Neue", Arial, sans-serif';
     var fontSize = 48;
     o.font = '600 ' + fontSize + 'px ' + family;
-    var w = o.measureText('DS').width;
-    if (w > 52) { fontSize = Math.floor(fontSize * 52 / w); o.font = '600 ' + fontSize + 'px ' + family; }
+    var w = o.measureText(LABEL).width;
+    if (w > 58) { fontSize = Math.floor(fontSize * 58 / w); o.font = '600 ' + fontSize + 'px ' + family; }
     o.textAlign = 'center';
     o.textBaseline = 'middle';
     o.fillStyle = '#000';
-    o.fillText('DS', N / 2, N / 2 + 2);
+    o.fillText(LABEL, N / 2, N / 2 + 1);
     var data = o.getImageData(0, 0, N, N).data;
     var out = new Float32Array(N * N);
     for (var i = 0; i < N * N; i++) {
       var a = data[i * 4 + 3] / 255;
+      a = a > 0.45 ? 1 : a * 0.4;  // sharpen the letter edges
       out[i] = DARK + (1 - DARK) * a;
     }
     return out;
