@@ -3,12 +3,14 @@
 :root {
   --text: #1f2328;
   --muted: #5f6b7a;
-  --link: #2a46b8;
-  --link-hover: #1b2f8a;
+  --yonsei: #00205B;   /* Yonsei blue, official Pantone 281C */
+  --mit: #750014;      /* MIT red, official web color */
+  --link: var(--yonsei);
+  --link-hover: var(--mit);
   --rule: #e3e6ea;
   --card: #fafbfc;
   --bg: #ffffff;
-  --photon: #2f55e4;
+  --photon: #00205B;
   --pixel: #e8ebf3;
   --serif: "Source Serif 4", Georgia, "Times New Roman", serif;
 }
@@ -27,10 +29,16 @@ body {
   line-height: 1.65;
 }
 
-a { color: var(--link); text-decoration: none; }
-a:hover { color: var(--link-hover); text-decoration: underline; text-underline-offset: 0.15em; }
+a {
+  color: var(--link);
+  text-decoration: underline;
+  text-decoration-color: rgba(0, 32, 91, 0.3);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.18em;
+}
+a:hover { color: var(--link-hover); text-decoration-color: var(--link-hover); }
 a:focus-visible, canvas:focus-visible {
-  outline: 2px solid var(--link);
+  outline: 2px solid var(--yonsei);
   outline-offset: 3px;
   border-radius: 2px;
 }
@@ -49,6 +57,7 @@ p { margin: 0 0 1rem; }
   top: 0;
   z-index: 10;
   background: rgba(255, 255, 255, 0.96);
+  border-top: 4px solid var(--yonsei);
   border-bottom: 1px solid var(--rule);
 }
 .site-nav .container {
@@ -63,8 +72,8 @@ p { margin: 0 0 1rem; }
   color: var(--text);
   white-space: nowrap;
 }
-.brand:hover { color: var(--text); text-decoration: none; }
-.brand b { font-weight: 700; }
+.brand, .brand:hover { color: var(--text); text-decoration: none; }
+.brand b { font-weight: 700; color: var(--yonsei); }
 .brand span { font-weight: 300; }
 .nav-links {
   display: flex;
@@ -74,9 +83,10 @@ p { margin: 0 0 1rem; }
   padding: 0;
   list-style: none;
 }
-.nav-links a { color: var(--text); }
-.nav-links a:hover { color: var(--link); text-decoration: none; }
-.nav-links a[aria-current="page"] { color: var(--link); }
+.nav-links a { color: var(--text); text-decoration: none; }
+.nav-links a { display: inline-block; padding: 0.15rem 0; border-bottom: 2px solid transparent; }
+.nav-links a:hover { color: var(--mit); text-decoration: none; }
+.nav-links a[aria-current="page"] { color: var(--yonsei); font-weight: 600; border-bottom-color: var(--mit); }
 
 main.container { padding-top: 3.25rem; padding-bottom: 4.5rem; }
 
@@ -88,7 +98,7 @@ main.container { padding-top: 3.25rem; padding-bottom: 4.5rem; }
   font-weight: 300;
   letter-spacing: -0.01em;
 }
-.name b { font-weight: 700; }
+.name b { font-weight: 700; color: var(--yonsei); }
 .tagline {
   color: var(--muted);
   font-size: 1.125rem;
@@ -99,12 +109,22 @@ main.container { padding-top: 3.25rem; padding-bottom: 4.5rem; }
   font-weight: 400;
   line-height: 1.15;
   margin: 0 0 1.5rem;
+  color: var(--yonsei);
 }
 h2 {
   font-size: 1.5rem;
   font-weight: 600;
   line-height: 1.25;
+  color: var(--yonsei);
   margin: 3.25rem 0 1.1rem;
+}
+h2::after {
+  content: "";
+  display: block;
+  width: 2.25rem;
+  height: 3px;
+  margin-top: 0.45rem;
+  background: var(--mit);
 }
 h3 {
   font-size: 1.2rem;
@@ -159,7 +179,7 @@ h3 {
   height: 1rem;
   position: relative;
   top: 0.15rem;
-  color: var(--muted);
+  color: var(--yonsei);
 }
 .contact-card .sep { color: var(--muted); margin: 0 0.35rem; }
 .contact-card .note { color: var(--muted); }
@@ -192,7 +212,7 @@ h3 {
   margin-top: 0.2rem;
   padding: 0.2rem 0.4rem;
   border-radius: 4px;
-  background: var(--link);
+  background: var(--yonsei);
   color: #fff;
   font-size: 0.8rem;
   font-weight: 600;
@@ -200,9 +220,10 @@ h3 {
   text-align: center;
   text-decoration: none;
 }
+.badge.journal { background: var(--mit); }
 .pub-title { font-weight: 600; line-height: 1.45; }
 .pub-authors { color: var(--text); font-size: 1rem; }
-.pub-authors b { font-weight: 700; text-decoration: underline; text-underline-offset: 0.18em; text-decoration-thickness: 1px; white-space: nowrap; }
+.pub-authors b { font-weight: 700; color: var(--yonsei); text-decoration: underline; text-decoration-color: var(--mit); text-underline-offset: 0.2em; text-decoration-thickness: 2px; white-space: nowrap; }
 .pub-venue { color: var(--muted); font-size: 1rem; }
 .pill {
   display: inline-block;
@@ -250,7 +271,7 @@ h3 {
   text-align: left;
   font-weight: 600;
   padding: 0.45rem 1rem 0.45rem 0;
-  border-bottom: 1px solid var(--text);
+  border-bottom: 2px solid var(--yonsei);
 }
 .tapeouts td {
   padding: 0.55rem 1rem 0.55rem 0;
@@ -261,8 +282,9 @@ h3 {
 
 /* Footer */
 .site-footer {
-  background: #24292f;
-  color: #c9d1d9;
+  background: var(--yonsei);
+  border-top: 3px solid var(--mit);
+  color: #dbe3f1;
   font-size: 0.9rem;
   padding: 0.9rem 0;
   text-align: center;
