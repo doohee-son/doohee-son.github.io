@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Research | Doo-Hee Son</title>
+<meta name="description" content="Research of Doo-Hee Son on CMOS single-photon avalanche diodes (SPADs): radiation hardness, junction engineering, and chip design.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Crect x='2' y='2' width='12' height='12' rx='2' fill='%232A46B8'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,300..700;1,8..60,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav class="site-nav" aria-label="Main">
+  <div class="container">
+    <a class="brand" href="index.html"><b>Doo-Hee</b> <span>Son</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html">About</a></li>
+      <li><a href="research.html" aria-current="page">Research</a></li>
+      <li><a href="publications.html">Publications</a></li>
+      <li><a href="CV_DooHee_Son.pdf">CV</a></li>
+    </ul>
+  </div>
+</nav>
+
+<main class="container">
+  <h1 class="page-title">Research</h1>
+
+  <div class="research-intro">
+    <div>
+      <p>A single-photon avalanche diode (SPAD) turns one photon into a measurable avalanche current, which makes it useful wherever light is scarce and timing matters: ranging, biomedical imaging, quantum optics, and space instruments. I work on CMOS SPADs across the whole device cycle, from TCAD simulation and chip design to electrical and optical characterization and gamma-ray irradiation tests.</p>
+      <p>My current work asks two questions: how junction engineering can make CMOS SPADs faster and more efficient, and how device structure can keep them reliable under the ionizing radiation they would meet in space.</p>
+    </div>
+    <figure class="array">
+      <canvas id="array" width="240" height="240" role="img" tabindex="0"
+        aria-label="Animation of single-photon counts building up on a 64 by 64 SPAD array until the initials DHS appear. Press Enter to replay."></canvas>
+      <figcaption>Single-photon counts building up on a 64&nbsp;×&nbsp;64 SPAD array. Click to replay.</figcaption>
+    </figure>
+  </div>
+
+  <section class="project" aria-labelledby="p1">
+    <h2 id="p1">Radiation hardness of CMOS SPADs</h2>
+    <p class="period">2024 – present</p>
+    <p>I study how gamma-ray total ionizing dose (TID) degrades CMOS SPADs and which device structures resist it. Using Sentaurus TCAD models of oxide-trapped charge and interface traps, I showed that a silicide layer over the Si/SiO₂ interface suppresses TID-induced interface-trap generation in back-illuminated SPADs.</p>
+    <p>For on-site gamma-ray irradiation tests at KAERI Jeongeup, I built a portable multi-channel setup with custom readout PCBs and selective shielding that monitors the dark count rate (DCR) in real time. SPADs with a physical guard ring and a pinning layer showed a far smaller DCR increase than conventional SPADs. Four SPAD variants based on these results are now integrated into a 64&nbsp;×&nbsp;64 SPAD array chip for array-level tests.</p>
+    <p class="credit">In collaboration with Dr. Minwook Seong (Korea Atomic Energy Research Institute), Dr. Inyong Kwon (Yonsei University), and Prof. Byungchoul Park (Myongji University), who designed the array's readout circuitry.</p>
+  </section>
+
+  <section class="project" aria-labelledby="p2">
+    <h2 id="p2">SPAD performance in standard CMOS</h2>
+    <p class="period">2022 – present</p>
+    <p>For mobile applications, I engineered the junction doping of a front-illuminated CMOS SPAD to lower its breakdown voltage, improving timing resolution while preserving photon detection probability (PDP) and DCR. The work combines TCAD simulation of doping profiles and electric-field distributions with measurements of <span class="nobr">I–V</span>, DCR, PDP, afterpulsing, timing jitter, and light emission, and builds on earlier back-end-of-line design studies of output contacts and metal layers.</p>
+    <p class="credit">A journal manuscript with EPFL and GLOBALFOUNDRIES Singapore is in submission to <i>Optics Express</i>.</p>
+  </section>
+
+  <section class="project" aria-labelledby="p3">
+    <h2 id="p3">SPAD chip design and tape-outs</h2>
+    <p class="period">2024 – present</p>
+    <p>I design SPAD test chips based on TCAD simulation, build the readout PCBs used to characterize them, and am currently developing an FPGA-based interface for chip-level measurements.</p>
+    <table class="tapeouts">
+      <thead>
+        <tr><th scope="col">Date</th><th scope="col">Process</th><th scope="col">Devices</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Dec 2025</td><td>110 nm BSI CMOS image sensor</td><td>Radiation-hardened 64&nbsp;×&nbsp;64 SPAD array and single SPADs</td></tr>
+        <tr><td>Sep 2025</td><td>90 nm BSI CMOS image sensor</td><td>Radiation-hardened single SPADs</td></tr>
+        <tr><td>Mar 2025</td><td>90 nm Bipolar-CMOS-DMOS (BCD)</td><td>STI and LOCOS test single SPADs</td></tr>
+        <tr><td>Feb 2025</td><td>55 nm 3D-stacked BSI CMOS image sensor</td><td>Isolation-type p-n single SPADs</td></tr>
+        <tr><td>Nov 2024</td><td>90 nm BSI CMOS image sensor</td><td>Lateral p-i-n single SPADs</td></tr>
+      </tbody>
+    </table>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container">© 2026 Doo-Hee Son. Last updated November 2026.</div>
+</footer>
+
+<script>
+(function () {
+  var canvas = document.getElementById('array');
+  if (!canvas || !canvas.getContext) return;
+  var ctx = canvas.getContext('2d');
+  var N = 64;
+  var TOTAL_STEPS = 150;      // photon batches in one run
+  var TRIALS_PER_STEP = 360;  // photon arrivals per batch
+  var DURATION = 2600;        // ms
+  var DARK = 0.02;           // relative dark count probability
+  var LABEL = 'DHS';         // letters that emerge from the photon counts
+  var COLORS = { pixel: '#E8EBF3', photon: '#2F55E4' };
+  var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  var weights, counts, flash, rand, stepsDone, startTime, running = false, size = 0;
+
+  function mulberry32(a) {
+    return function () {
+      a |= 0; a = a + 0x6D2B79F5 | 0;
+      var t = Math.imul(a ^ a >>> 15, 1 | a);
+      t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t;
+      return ((t ^ t >>> 14) >>> 0) / 4294967296;
+    };
+  }
+
+  function buildWeights() {
+    var off = document.createElement('canvas');
+    off.width = N; off.height = N;
+    var o = off.getContext('2d');
+    var family = '"Helvetica Neue", Arial, sans-serif';
+    var fontSize = 48;
+    o.font = '700 ' + fontSize + 'px ' + family;
+    var w = o.measureText(LABEL).width;
+    if (w > 58) { fontSize = Math.floor(fontSize * 58 / w); o.font = '700 ' + fontSize + 'px ' + family; }
+    o.textAlign = 'center';
+    o.textBaseline = 'middle';
+    o.fillStyle = '#000';
+    o.fillText(LABEL, N / 2, N / 2 + 1);
+    var data = o.getImageData(0, 0, N, N).data;
+    var out = new Float32Array(N * N);
+    for (var i = 0; i < N * N; i++) {
+      var a = data[i * 4 + 3] / 255;
+      a = a > 0.45 ? 1 : a * 0.4;  // sharpen the letter edges
+      out[i] = DARK + (1 - DARK) * a;
+    }
+    return out;
+  }
+
+  function reset() {
+    counts = new Float32Array(N * N);
+    flash = new Float32Array(N * N);
+    rand = mulberry32(5);
+    stepsDone = 0;
+  }
+
+  function step() {
+    for (var k = 0; k < TRIALS_PER_STEP; k++) {
+      var i = (rand() * N * N) | 0;
+      if (rand() < weights[i]) { counts[i] += 1; flash[i] = 1; }
+    }
+    stepsDone++;
+  }
+
+  function resize() {
+    var css = canvas.getBoundingClientRect().width || 240;
+    var dpr = window.devicePixelRatio || 1;
+    canvas.width = Math.round(css * dpr);
+    canvas.height = Math.round(css * dpr);
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    size = css;
+  }
+
+  function draw(withFlash) {
+    var max = 0;
+    for (var j = 0; j < counts.length; j++) if (counts[j] > max) max = counts[j];
+    var norm = Math.max(4, max * 0.85);
+    var pitch = size / N;
+    var cell = pitch * 0.8;
+    ctx.clearRect(0, 0, size, size);
+    for (var y = 0; y < N; y++) {
+      for (var x = 0; x < N; x++) {
+        var i = y * N + x;
+        var px = x * pitch, py = y * pitch;
+        ctx.globalAlpha = 1;
+        ctx.fillStyle = COLORS.pixel;
+        ctx.fillRect(px, py, cell, cell);
+        var v = Math.min(1, counts[i] / norm);
+        if (withFlash && flash[i] > v) v = flash[i];
+        if (v > 0) {
+          ctx.globalAlpha = 0.14 + 0.86 * v;
+          ctx.fillStyle = COLORS.photon;
+          ctx.fillRect(px, py, cell, cell);
+        }
+      }
+    }
+    ctx.globalAlpha = 1;
+  }
+
+  function frame(t) {
+    if (!startTime) startTime = t;
+    var due = Math.min(TOTAL_STEPS, Math.floor((t - startTime) / DURATION * TOTAL_STEPS));
+    while (stepsDone < due) step();
+    draw(true);
+    for (var i = 0; i < flash.length; i++) flash[i] *= 0.78;
+    if (stepsDone < TOTAL_STEPS) {
+      requestAnimationFrame(frame);
+    } else {
+      draw(false);
+      running = false;
+    }
+  }
+
+  function run() {
+    if (running) return;
+    reset();
+    if (reduceMotion) {
+      while (stepsDone < TOTAL_STEPS) step();
+      draw(false);
+      return;
+    }
+    running = true;
+    startTime = 0;
+    requestAnimationFrame(frame);
+  }
+
+  function init() {
+    if (weights) return;
+    weights = buildWeights();
+    resize();
+    run();
+  }
+
+  canvas.addEventListener('click', run);
+  canvas.addEventListener('keydown', function (e) {
+    if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); run(); }
+  });
+  window.addEventListener('resize', function () {
+    if (!weights) return;
+    resize();
+    draw(false);
+  });
+
+  init();
+})();
+</script>
+</body>
+</html>

@@ -7,618 +7,124 @@
 <meta name="description" content="Doo-Hee Son is a post-master's researcher at Yonsei University working on CMOS single-photon avalanche diodes (SPADs) and their radiation hardness for space applications.">
 <meta property="og:title" content="Doo-Hee Son">
 <meta property="og:description" content="Post-master's researcher at Yonsei University working on CMOS single-photon avalanche diodes (SPADs) and their radiation hardness for space applications.">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Crect x='2' y='2' width='12' height='12' rx='2' fill='%232F55E4'/%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Crect x='2' y='2' width='12' height='12' rx='2' fill='%232A46B8'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:wght@500;600&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap" rel="stylesheet">
-<style>
-  :root {
-    --paper: #FCFCFD;
-    --ink: #18203A;
-    --muted: #5A6275;
-    --rule: #E2E5EC;
-    --photon: #2F55E4;
-    --pixel: #E8EBF3;
-    --sans: "Familjen Grotesk", "Helvetica Neue", Arial, sans-serif;
-    --serif: "Newsreader", Georgia, "Times New Roman", serif;
-  }
-
-  * { box-sizing: border-box; }
-
-  html { -webkit-text-size-adjust: 100%; }
-
-  body {
-    margin: 0;
-    background: var(--paper);
-    color: var(--ink);
-    font-family: var(--serif);
-    font-optical-sizing: auto;
-    font-size: 1.125rem;
-    line-height: 1.6;
-  }
-
-  .wrap {
-    max-width: 47rem;
-    margin: 0 auto;
-    padding: 5rem 1.5rem 3rem;
-  }
-
-  a {
-    color: var(--photon);
-    text-decoration-thickness: 1px;
-    text-underline-offset: 0.18em;
-  }
-  a:hover { text-decoration-thickness: 2px; }
-  a:focus-visible,
-  canvas:focus-visible {
-    outline: 2px solid var(--photon);
-    outline-offset: 3px;
-    border-radius: 2px;
-  }
-
-  p { margin: 0 0 1rem; }
-
-  /* Hero */
-  .hero {
-    display: grid;
-    grid-template-columns: 1fr auto;
-    gap: 2.5rem;
-    align-items: center;
-  }
-
-  h1 {
-    font-family: var(--sans);
-    font-weight: 600;
-    font-size: 3.5rem;
-    line-height: 1;
-    letter-spacing: -0.025em;
-    margin: 0 0 1.25rem;
-  }
-
-  .role {
-    font-family: var(--sans);
-    font-weight: 500;
-    font-size: 1.125rem;
-    line-height: 1.45;
-    color: var(--muted);
-    margin: 0 0 1.5rem;
-  }
-
-  .links {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem 1.5rem;
-    font-family: var(--sans);
-    font-weight: 500;
-    font-size: 1.0625rem;
-  }
-
-  .array { margin: 0; width: 15rem; }
-  .array canvas {
-    display: block;
-    width: 15rem;
-    height: 15rem;
-    cursor: pointer;
-  }
-  .array figcaption {
-    font-family: var(--sans);
-    font-size: 0.875rem;
-    line-height: 1.4;
-    color: var(--muted);
-    margin-top: 0.75rem;
-  }
-
-  /* Bio */
-  .bio {
-    display: grid;
-    grid-template-columns: auto 1fr;
-    gap: 2rem;
-    align-items: start;
-    margin-top: 4.5rem;
-  }
-  .portrait {
-    width: 9rem;
-    height: 12rem;
-    object-fit: cover;
-    border-radius: 6px;
-    background: var(--pixel);
-  }
-  .portrait.missing { display: none; }
-  .bio p { max-width: 36rem; }
-
-  /* Sections */
-  section { margin-top: 4.5rem; }
-
-  h2 {
-    font-family: var(--sans);
-    font-weight: 600;
-    font-size: 1.5rem;
-    line-height: 1.2;
-    letter-spacing: -0.01em;
-    margin: 0 0 1.5rem;
-  }
-
-  h3 {
-    font-family: var(--sans);
-    font-weight: 600;
-    font-size: 1.1875rem;
-    line-height: 1.3;
-    margin: 0 0 0.25rem;
-  }
-
-  .period {
-    font-family: var(--sans);
-    font-size: 0.9375rem;
-    color: var(--muted);
-    margin: 0 0 0.75rem;
-  }
-
-  .project + .project { margin-top: 2.75rem; }
-  .project p { max-width: 40rem; }
-  .credit { color: var(--muted); font-size: 1rem; }
-
-  /* Dated lists (news, background) */
-  .dated {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-  }
-  .dated li {
-    display: grid;
-    grid-template-columns: 7.5rem 1fr;
-    gap: 1.25rem;
-    padding: 0.4rem 0;
-  }
-  .dated .when {
-    font-family: var(--sans);
-    font-size: 0.9375rem;
-    color: var(--muted);
-    font-variant-numeric: tabular-nums;
-    padding-top: 0.15rem;
-  }
-  .background .dated li { grid-template-columns: 10.5rem 1fr; }
-  .background h3 { margin-top: 2.25rem; margin-bottom: 0.5rem; }
-  .background h3:first-of-type { margin-top: 0; }
-  .detail { display: block; color: var(--muted); font-size: 1rem; }
-
-  /* Tape-out table */
-  .tapeouts {
-    width: 100%;
-    border-collapse: collapse;
-    margin: 1.25rem 0 0;
-    font-size: 1rem;
-    line-height: 1.45;
-  }
-  .tapeouts caption {
-    text-align: left;
-    font-family: var(--sans);
-    font-size: 0.9375rem;
-    color: var(--muted);
-    padding-bottom: 0.5rem;
-  }
-  .tapeouts th {
-    font-family: var(--sans);
-    font-weight: 500;
-    font-size: 0.9375rem;
-    color: var(--muted);
-    text-align: left;
-    padding: 0.4rem 1rem 0.4rem 0;
-    border-bottom: 1px solid var(--rule);
-  }
-  .tapeouts td {
-    padding: 0.55rem 1rem 0.55rem 0;
-    border-bottom: 1px solid var(--rule);
-    vertical-align: top;
-  }
-  .tapeouts td:first-child {
-    font-family: var(--sans);
-    font-size: 0.9375rem;
-    color: var(--muted);
-    white-space: nowrap;
-    font-variant-numeric: tabular-nums;
-  }
-
-  /* Publications */
-  .pubs h3 { margin: 2.25rem 0 0.75rem; }
-  .pubs h3:first-of-type { margin-top: 0; }
-  .pubs ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-  }
-  .pubs li {
-    font-size: 1rem;
-    line-height: 1.5;
-    margin-bottom: 1rem;
-  }
-  .pubs .title { display: block; font-weight: 500; }
-  .pubs .authors strong { font-weight: 500; color: var(--ink); white-space: nowrap; }
-  .pubs .authors { color: var(--muted); }
-  .pubs .venue { display: block; color: var(--muted); }
-  .note {
-    font-family: var(--sans);
-    font-size: 0.875rem;
-    color: var(--muted);
-  }
-
-  /* Footer */
-  footer {
-    margin-top: 5rem;
-    padding-top: 1.5rem;
-    border-top: 1px solid var(--rule);
-    font-size: 1rem;
-    color: var(--muted);
-  }
-  footer p { margin: 0 0 0.5rem; }
-  .updated { font-family: var(--sans); font-size: 0.875rem; margin-top: 1.25rem; }
-
-  @media (max-width: 720px) {
-    .wrap { padding-top: 3rem; }
-    .hero { grid-template-columns: 1fr; gap: 2rem; }
-    h1 { font-size: 2.75rem; }
-    .array, .array canvas { width: 12.5rem; }
-    .array canvas { height: 12.5rem; }
-    .bio { grid-template-columns: 1fr; gap: 1.5rem; margin-top: 3.5rem; }
-    .portrait { width: 7.5rem; height: 10rem; }
-    .dated li,
-    .background .dated li { grid-template-columns: 1fr; gap: 0; }
-    .tapeouts thead { display: none; }
-    .tapeouts tr { display: block; padding: 0.6rem 0; border-bottom: 1px solid var(--rule); }
-    .tapeouts td { display: block; border: 0; padding: 0; }
-  }
-</style>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,300..700;1,8..60,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-<div class="wrap">
 
-  <header class="hero">
-    <div class="intro">
-      <h1>Doo-Hee Son</h1>
-      <p class="role">Post-Master's Researcher<br>Advanced Semiconductor Devices and Systems Lab<br>Yonsei University, Seoul</p>
-      <nav class="links" aria-label="Profile links">
-        <a href="mailto:dewy@yonsei.ac.kr">Email</a>
-        <a href="CV_DooHee_Son.pdf">CV</a>
-        <a href="https://www.linkedin.com/in/doohee-son/">LinkedIn</a>
-        <!-- 구글 스칼라 프로필을 만들면 아래 줄의 주석 표시(<!- - 와 - ->)를 지우고 주소를 넣어줘 -->
-        <!-- <a href="https://scholar.google.com/citations?user=YOUR_ID">Google Scholar</a> -->
-      </nav>
-    </div>
-    <figure class="array">
-      <canvas id="array" width="240" height="240" role="img" tabindex="0"
-        aria-label="Animation of single-photon counts building up on a 64 by 64 SPAD array until the initials DHS appear. Press Enter to replay."></canvas>
-      <figcaption>Single-photon counts building up on a 64&nbsp;×&nbsp;64 SPAD array. Click to replay.</figcaption>
-    </figure>
-  </header>
+<nav class="site-nav" aria-label="Main">
+  <div class="container">
+    <ul class="nav-links">
+      <li><a href="index.html" aria-current="page">About</a></li>
+      <li><a href="research.html">Research</a></li>
+      <li><a href="publications.html">Publications</a></li>
+      <li><a href="CV_DooHee_Son.pdf">CV</a></li>
+    </ul>
+  </div>
+</nav>
 
-  <main>
+<main class="container">
+  <h1 class="name"><b>Doo-Hee</b> Son</h1>
+  <p class="tagline">Post-Master's Researcher, Yonsei University</p>
 
-    <div class="bio">
-      <img class="portrait" src="profile.jpg" alt="Portrait of Doo-Hee Son" width="144" height="192" onerror="this.classList.add('missing')">
-      <div>
-        <p>I am a Post-Master's Researcher in the Advanced Semiconductor Devices and Systems Lab at Yonsei University, working with Prof. Myung-Jae Lee. I study CMOS single-photon avalanche diodes (SPADs): how junction doping-profile engineering can improve their performance, and how device structure can keep them stable under the gamma-ray doses they would meet in space.</p>
-        <p>My work runs from Sentaurus TCAD simulation through chip design, with five SPAD tape-outs so far, to electrical and optical characterization and on-site gamma-ray irradiation tests. I began SPAD research as an undergraduate researcher at the Korea Institute of Science and Technology (KIST), under the same advisor.</p>
-        <p>Looking ahead, I am interested in single-photon detectors for space and biomedical applications, including superconducting nanowire single-photon detectors (SNSPDs).</p>
-      </div>
-    </div>
+  <figure class="profile" id="profile">
+    <img src="profile.jpg" alt="Portrait of Doo-Hee Son" width="240" height="320" onerror="document.getElementById('profile').classList.add('missing')">
+    <figcaption>Engineering Hall II, Room&nbsp;B723-B<br>Yonsei University, Seoul</figcaption>
+  </figure>
 
-    <section id="news" aria-labelledby="news-h">
-      <h2 id="news-h">News</h2>
-      <ul class="dated">
-        <li><span class="when">Dec 2026</span><span>Oral presentation at the IEEE Seoul Section Student Paper Contest on December 5.</span></li>
-        <li><span class="when">Nov 2026</span><span>Poster at IEEE NSS MIC RTSD 2026 in Granada, Spain.</span></li>
-        <li><span class="when">Sep 2026</span><span>Started as a Post-Master's Researcher at Yonsei University.</span></li>
-        <li><span class="when">Aug 2026</span><span>Received my M.S. in Electrical and Electronic Engineering from Yonsei University.</span></li>
-        <li><span class="when">Jun 2026</span><span>Poster at the International SPAD Sensor Workshop (ISSW) 2026 in Seoul.</span></li>
-      </ul>
-    </section>
+  <p>I am a Post-Master's Researcher in the <a href="https://sites.google.com/view/adslab">Advanced Semiconductor Devices and Systems Lab</a> at the <a href="https://ee.yonsei.ac.kr/ee_en/index.do">School of Electrical and Electronic Engineering, Yonsei University</a>, advised by Prof. Myung-Jae Lee.</p>
 
-    <section id="research" aria-labelledby="research-h">
-      <h2 id="research-h">Research</h2>
+  <p>My research focuses on CMOS single-photon avalanche diodes (SPADs): how junction doping-profile engineering can improve their performance, and how device structure can keep them stable under the gamma-ray doses they would meet in space. My work runs from Sentaurus TCAD simulation through chip design, with five SPAD tape-outs so far, to electrical and optical characterization and on-site gamma-ray irradiation tests.</p>
 
-      <article class="project">
-        <h3>Radiation hardness of CMOS SPADs</h3>
-        <p class="period">2024 – present</p>
-        <p>I study how gamma-ray total ionizing dose (TID) degrades CMOS SPADs and which device structures resist it. Using Sentaurus TCAD models of oxide-trapped charge and interface traps, I showed that a silicide layer over the Si/SiO₂ interface suppresses TID-induced interface-trap generation in back-illuminated SPADs.</p>
-        <p>For on-site gamma-ray irradiation tests at KAERI Jeongeup, I built a portable multi-channel setup with custom readout PCBs and selective shielding that monitors the dark count rate (DCR) in real time. SPADs with a physical guard ring and a pinning layer showed a far smaller DCR increase than conventional SPADs. Four SPAD variants based on these results are now integrated into a 64&nbsp;×&nbsp;64 SPAD array chip for array-level tests.</p>
-        <p class="credit">In collaboration with Dr. Minwook Seong (Korea Atomic Energy Research Institute), Dr. Inyong Kwon (Yonsei University), and Prof. Byungchoul Park (Myongji University), who designed the array's readout circuitry.</p>
-      </article>
+  <p>I began SPAD research as an undergraduate researcher at the <a href="https://kist.re.kr/eng/index.do">Korea Institute of Science and Technology (KIST)</a> under the same advisor. I received my M.S. in Electrical and Electronic Engineering (2026) and my B.S.E. in Nano Science and Engineering and in Electrical and Electronic Engineering (2024), both from Yonsei University, where I have also served as a teaching assistant for Physical Electronics.</p>
 
-      <article class="project">
-        <h3>SPAD performance in standard CMOS</h3>
-        <p class="period">2022 – present</p>
-        <p>For mobile applications, I engineered the junction doping of a front-illuminated CMOS SPAD to lower its breakdown voltage, improving timing resolution while preserving photon detection probability (PDP) and DCR. The work combines TCAD simulation of doping profiles and electric-field distributions with measurements of I–V, DCR, PDP, afterpulsing, timing jitter, and light emission, and builds on earlier back-end-of-line design studies of output contacts and metal layers.</p>
-        <p class="credit">A journal manuscript with EPFL and GLOBALFOUNDRIES Singapore is in submission to <em>Optics Express</em>.</p>
-      </article>
+  <p>Looking ahead, I am interested in single-photon detectors for space and biomedical applications, including superconducting nanowire single-photon detectors (SNSPDs).</p>
 
-      <article class="project">
-        <h3>SPAD chip design and tape-outs</h3>
-        <p class="period">2024 – present</p>
-        <p>I design SPAD test chips based on TCAD simulation, build the readout PCBs used to characterize them, and am currently developing an FPGA-based interface for chip-level measurements.</p>
-        <table class="tapeouts">
-          <caption>Tape-outs</caption>
-          <thead>
-            <tr><th scope="col">Date</th><th scope="col">Process</th><th scope="col">Devices</th></tr>
-          </thead>
-          <tbody>
-            <tr><td>Dec 2025</td><td>110 nm BSI CMOS image sensor</td><td>Radiation-hardened 64&nbsp;×&nbsp;64 SPAD array and single SPADs</td></tr>
-            <tr><td>Sep 2025</td><td>90 nm BSI CMOS image sensor</td><td>Radiation-hardened single SPADs</td></tr>
-            <tr><td>Mar 2025</td><td>90 nm Bipolar-CMOS-DMOS (BCD)</td><td>STI and LOCOS test single SPADs</td></tr>
-            <tr><td>Feb 2025</td><td>55 nm 3D-stacked BSI CMOS image sensor</td><td>Isolation-type p-n single SPADs</td></tr>
-            <tr><td>Nov 2024</td><td>90 nm BSI CMOS image sensor</td><td>Lateral p-i-n single SPADs</td></tr>
-          </tbody>
-        </table>
-      </article>
-    </section>
+  <div class="contact-card">
+    <ul>
+      <li>
+        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><path d="M4 1.5h5.5L13 5v9.5H4z"/><path d="M9.5 1.5V5H13M6 8h5M6 10.5h5"/></svg>
+        <span><a href="CV_DooHee_Son.pdf">Curriculum Vitae</a> <span class="note">(last updated November 2026)</span></span>
+      </li>
+      <li>
+        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><path d="M6.5 9.5l3-3"/><path d="M7.5 4.5l1-1a2.5 2.5 0 0 1 3.5 3.5l-1 1M8.5 11.5l-1 1A2.5 2.5 0 0 1 4 9l1-1"/></svg>
+        <span>
+          <a href="https://www.linkedin.com/in/doohee-son/">LinkedIn</a>
+          <!-- 구글 스칼라를 만들면 아래 줄의 주석 표시를 지우고 주소를 넣어줘 -->
+          <!-- <span class="sep">|</span><a href="https://scholar.google.com/citations?user=YOUR_ID">Google Scholar</a> -->
+        </span>
+      </li>
+      <li>
+        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><rect x="1.5" y="3.5" width="13" height="9" rx="1"/><path d="M2 4.5l6 4.5 6-4.5"/></svg>
+        <span><a href="mailto:dewy@yonsei.ac.kr">dewy@yonsei.ac.kr</a></span>
+      </li>
+      <li>
+        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><path d="M8 14.5s-4.5-4.2-4.5-7.5a4.5 4.5 0 0 1 9 0c0 3.3-4.5 7.5-4.5 7.5z"/><circle cx="8" cy="7" r="1.6"/></svg>
+        <span>50 Yonsei-ro, Seodaemun-gu, Seoul 03722, South Korea</span>
+      </li>
+    </ul>
+  </div>
 
-    <section id="publications" class="pubs" aria-labelledby="pubs-h">
-      <h2 id="pubs-h">Publications and presentations</h2>
+  <div class="clear"></div>
 
-      <h3>Journal manuscripts</h3>
-      <ul>
-        <li>
-          <span class="title">Junction Doping-Profile Engineering for Reduced Breakdown Voltage and Improved Timing Resolution in CMOS SPADs</span>
-          <span class="authors"><strong>D.-H. Son</strong>*, D. Eom*, W.-Y. Ha, C. Bruschini, E. H. Toh, P. Zheng, V. Dhulla, Y. T. Chow, S. Chaw, E. Charbon, W.-Y. Choi, and M.-J. Lee</span>
-          <span class="venue">In submission to <em>Optics Express</em></span>
-        </li>
-      </ul>
+  <section aria-labelledby="news-h">
+    <h2 id="news-h">News</h2>
+    <ul class="news">
+      <li><time>Dec 2026</time><span>Oral presentation at the IEEE Seoul Section Student Paper Contest on December 5.</span></li>
+      <li><time>Nov 2026</time><span>Poster at IEEE NSS MIC RTSD 2026 in Granada, Spain.</span></li>
+      <li><time>Sep 2026</time><span>Started as a Post-Master's Researcher at Yonsei University.</span></li>
+      <li><time>Aug 2026</time><span>Received my M.S. in Electrical and Electronic Engineering from Yonsei University.</span></li>
+      <li><time>Jun 2026</time><span>Poster at the International SPAD Sensor Workshop (ISSW) 2026 in Seoul.</span></li>
+    </ul>
+  </section>
 
-      <h3>International conferences</h3>
-      <ul>
-        <li>
-          <span class="title">Radiation-Hardened CMOS-SPAD Design for Stable Geiger-Mode Operation</span>
-          <span class="authors"><strong>D.-H. Son</strong>, D. Eom, and M.-J. Lee</span>
-          <span class="venue"><em>IEEE NSS MIC RTSD</em>, Granada, Spain, Nov. 2026. Poster presentation.</span>
-        </li>
-        <li>
-          <span class="title">Breakdown Voltage Optimization of High-Voltage CMOS SPADs via Junction Doping Profile Engineering</span>
-          <span class="authors"><strong>D.-H. Son</strong>, D. Eom, and M.-J. Lee</span>
-          <span class="venue"><em>International SPAD Sensor Workshop (ISSW)</em>, Seoul, South Korea, Jun. 2026. Poster presentation.</span>
-        </li>
-        <li>
-          <span class="title">Single-Photon Avalanche Diode Implemented in 90 nm Standard Bipolar-CMOS-DMOS Technology Achieving Broad Spectral Sensitivity</span>
-          <span class="authors">D. Eom, J.-H. Kim, S. Yook, <strong>D.-H. Son</strong>, W.-Y. Choi, and M.-J. Lee</span>
-          <span class="venue"><em>International SPAD Sensor Workshop (ISSW)</em>, Seoul, South Korea, Jun. 2026.</span>
-        </li>
-        <li>
-          <span class="title">Novel Lateral p-i-n SPAD With High and Broad Spectral Response for Pixel Miniaturization</span>
-          <span class="authors">J.-H. Kim, D. Eom, E. Park, H.-S. Park, S. Yook, <strong>D.-H. Son</strong>, W.-Y. Choi, and M.-J. Lee</span>
-          <span class="venue"><em>IEEE International Electron Devices Meeting (IEDM)</em>, San Francisco, CA, USA, Dec. 2025.</span>
-        </li>
-        <li>
-          <span class="title">TCAD-Based Analysis of Radiation Effects on Backside-Illuminated SPADs</span>
-          <span class="authors"><strong>D.-H. Son</strong>*, J.-H. Kim*, and M.-J. Lee</span>
-          <span class="venue"><em>IEEE NSS MIC RTSD</em>, Yokohama, Japan, Nov. 2025. Poster presentation.</span>
-        </li>
-        <li>
-          <span class="title">State-of-the-Art CMOS SPADs</span>
-          <span class="authors"><strong>D.-H. Son</strong>, E. Park, J.-H. Kim, and M.-J. Lee</span>
-          <span class="venue"><em>IEEE NSS MIC RTSD</em>, Yokohama, Japan, Nov. 2025. Oral presentation.</span>
-        </li>
-        <li>
-          <span class="title">Back-Illuminated U-Shape p-i-n SPAD With High PDE and Broad Spectral Response Fabricated in 110 nm CIS Foundry Technology</span>
-          <span class="authors">J.-H. Kim, D. Eom, E. Park, <strong>D.-H. Son</strong>, W.-Y. Choi, and M.-J. Lee</span>
-          <span class="venue"><em>Symposium on VLSI Technology and Circuits</em>, Kyoto, Japan, Jun. 2025.</span>
-        </li>
-        <li>
-          <span class="title">Optimization of a 3.5 μm Pitch 3D-Stacked Back-Illuminated SPAD in 40 nm CIS Technology: Achieving 37% PDP at 940 nm</span>
-          <span class="authors">E. Park, H.-S. Park, H.-S. Choi, J.-H. Kim, D. Eom, E.-J. Kim, S. Yook, <strong>D.-H. Son</strong>, H. Lee, J. Jang, K.-D. Kim, J. Kim, W.-Y. Choi, and M.-J. Lee</span>
-          <span class="venue"><em>Symposium on VLSI Technology and Circuits</em>, Kyoto, Japan, Jun. 2025.</span>
-        </li>
-      </ul>
+  <section aria-labelledby="sel-h">
+    <h2 id="sel-h">Selected publications</h2>
+    <ul class="pub-list">
+      <li class="pub">
+        <abbr class="badge" title="Optics Express">Opt. Express</abbr>
+        <div>
+          <div class="pub-title">Junction Doping-Profile Engineering for Reduced Breakdown Voltage and Improved Timing Resolution in CMOS SPADs</div>
+          <div class="pub-authors"><b>D.-H.&nbsp;Son</b>*, D.&nbsp;Eom*, W.-Y.&nbsp;Ha, C.&nbsp;Bruschini, E.&nbsp;H.&nbsp;Toh, P.&nbsp;Zheng, V.&nbsp;Dhulla, Y.&nbsp;T.&nbsp;Chow, S.&nbsp;Chaw, E.&nbsp;Charbon, W.-Y.&nbsp;Choi, and M.-J.&nbsp;Lee</div>
+          <div class="pub-venue">In submission to <i>Optics Express</i></div>
+        </div>
+      </li>
+      <li class="pub">
+        <abbr class="badge" title="IEEE Nuclear Science Symposium, Medical Imaging Conference and Room Temperature Semiconductor Detector Symposium">NSS MIC</abbr>
+        <div>
+          <div class="pub-title">Radiation-Hardened CMOS-SPAD Design for Stable Geiger-Mode Operation</div>
+          <div class="pub-authors"><b>D.-H.&nbsp;Son</b>, D.&nbsp;Eom, and M.-J.&nbsp;Lee</div>
+          <div class="pub-venue"><i>IEEE NSS MIC RTSD</i>, Granada, Spain, Nov. 2026 <span class="pill">Poster</span></div>
+        </div>
+      </li>
+      <li class="pub">
+        <abbr class="badge" title="International SPAD Sensor Workshop">ISSW</abbr>
+        <div>
+          <div class="pub-title">Breakdown Voltage Optimization of High-Voltage CMOS SPADs via Junction Doping Profile Engineering</div>
+          <div class="pub-authors"><b>D.-H.&nbsp;Son</b>, D.&nbsp;Eom, and M.-J.&nbsp;Lee</div>
+          <div class="pub-venue"><i>International SPAD Sensor Workshop (ISSW)</i>, Seoul, South Korea, Jun. 2026 <span class="pill">Poster</span></div>
+        </div>
+      </li>
+      <li class="pub">
+        <abbr class="badge" title="IEEE Nuclear Science Symposium, Medical Imaging Conference and Room Temperature Semiconductor Detector Symposium">NSS MIC</abbr>
+        <div>
+          <div class="pub-title">TCAD-Based Analysis of Radiation Effects on Backside-Illuminated SPADs</div>
+          <div class="pub-authors"><b>D.-H.&nbsp;Son</b>*, J.-H.&nbsp;Kim*, and M.-J.&nbsp;Lee</div>
+          <div class="pub-venue"><i>IEEE NSS MIC RTSD</i>, Yokohama, Japan, Nov. 2025 <span class="pill">Poster</span></div>
+        </div>
+      </li>
+    </ul>
+    <p class="pub-note">* Equal contribution</p>
+    <p class="more-link">See the <a href="publications.html">full list of publications and presentations</a>.</p>
+  </section>
+</main>
 
-      <h3>National conferences</h3>
-      <ul>
-        <li>
-          <span class="title">Gamma-Ray Radiation Hardness Enhancement of CMOS Single-Photon Avalanche Diodes via Device Structure Optimization</span>
-          <span class="authors"><strong>D.-H. Son</strong>, D. Eom, and M.-J. Lee</span>
-          <span class="venue"><em>IEEE Seoul Section Student Paper Contest</em>, Seoul, South Korea, Dec. 2026. Oral presentation.</span>
-        </li>
-        <li>
-          <span class="title">Doping Optimization of Single-Photon Avalanche Diodes for Mobile Applications</span>
-          <span class="authors"><strong>D.-H. Son</strong>, D. Eom, and M.-J. Lee</span>
-          <span class="venue"><em>Korean Conference on Semiconductors (KCS)</em>, Jeongseon, South Korea, Feb. 2023. Oral presentation.</span>
-        </li>
-        <li>
-          <span class="title">Back-End-of-Line Design Optimization for Single-Photon Avalanche Diodes in CMOS Technology</span>
-          <span class="authors"><strong>D.-H. Son</strong>, D. Eom, and M.-J. Lee</span>
-          <span class="venue"><em>Photonics Conference</em>, Pyeongchang, South Korea, Nov. 2022. Poster presentation.</span>
-        </li>
-      </ul>
-      <p class="note">* Equal contribution</p>
-    </section>
+<footer class="site-footer">
+  <div class="container">© 2026 Doo-Hee Son. Last updated November 2026.</div>
+</footer>
 
-    <section id="background" class="background" aria-labelledby="background-h">
-      <h2 id="background-h">Background</h2>
-
-      <h3>Positions</h3>
-      <ul class="dated">
-        <li><span class="when">Sep 2026 – present</span><span>Post-Master's Researcher, Yonsei University<span class="detail">Advanced Semiconductor Devices and Systems Lab</span></span></li>
-        <li><span class="when">Sep 2024 – Aug 2026</span><span>Graduate Researcher, Yonsei University<span class="detail">Advanced Semiconductor Devices and Systems Lab</span></span></li>
-        <li><span class="when">Aug 2022 – Feb 2023</span><span>Undergraduate Researcher, Korea Institute of Science and Technology (KIST)<span class="detail">Center for Opto-Electronic Materials and Devices, Post-Silicon Semiconductor Institute</span></span></li>
-      </ul>
-
-      <h3>Education</h3>
-      <ul class="dated">
-        <li><span class="when">Sep 2024 – Aug 2026</span><span>M.S. in Electrical and Electronic Engineering, Yonsei University<span class="detail">Advisor: Prof. Myung-Jae Lee. Thesis: “Performance Optimization and Radiation Hardness Enhancement of Single-Photon Avalanche Diodes in CMOS Technologies”</span></span></li>
-        <li><span class="when">Mar 2020 – Aug 2024</span><span>B.S.E. in Nano Science and Engineering and in Electrical and Electronic Engineering (double major), Yonsei University<span class="detail">Nano Science and Engineering at Underwood International College, where all courses are taught in English</span></span></li>
-      </ul>
-
-      <h3>Teaching</h3>
-      <ul class="dated">
-        <li><span class="when">Spring 2025, 2026</span><span>Teaching Assistant, Physical Electronics (Prof. Myung-Jae Lee), Yonsei University</span></li>
-        <li><span class="when">Spring 2025</span><span>Teaching Assistant, English language courses (Prof. Grace Yu), Yonsei University</span></li>
-      </ul>
-
-      <h3>Honors and scholarships</h3>
-      <ul class="dated">
-        <li><span class="when">2024 – 2025</span><span>Graduate Student Research Assistant Scholarship, Yonsei University (3 semesters)</span></li>
-        <li><span class="when">2025, 2026</span><span>Teaching Assistant Scholarship, Yonsei University</span></li>
-        <li><span class="when">2024</span><span>UIC Self-Innovative Research Scholarship, Underwood International College, Yonsei University</span></li>
-        <li><span class="when">2019</span><span>Honorable Mention, Makerthon, World Smart City Expo, Ministry of Land, Infrastructure and Transport, South Korea</span></li>
-      </ul>
-    </section>
-
-  </main>
-
-  <footer>
-    <p><a href="mailto:dewy@yonsei.ac.kr">dewy@yonsei.ac.kr</a></p>
-    <p>School of Electrical and Electronic Engineering, Yonsei University<br>Room B723-B, Engineering Hall II, 50 Yonsei-ro, Seodaemun-gu, Seoul 03722, South Korea</p>
-    <p class="updated">Last updated November 2026</p>
-  </footer>
-
-</div>
-
-<script>
-(function () {
-  var canvas = document.getElementById('array');
-  if (!canvas || !canvas.getContext) return;
-  var ctx = canvas.getContext('2d');
-  var N = 64;
-  var TOTAL_STEPS = 150;      // photon batches in one run
-  var TRIALS_PER_STEP = 360;  // photon arrivals per batch
-  var DURATION = 2600;        // ms
-  var DARK = 0.02;           // relative dark count probability
-  var LABEL = 'DHS';         // letters that emerge from the photon counts
-  var COLORS = { pixel: '#E8EBF3', photon: '#2F55E4' };
-  var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-  var weights, counts, flash, rand, stepsDone, startTime, running = false, size = 0;
-
-  function mulberry32(a) {
-    return function () {
-      a |= 0; a = a + 0x6D2B79F5 | 0;
-      var t = Math.imul(a ^ a >>> 15, 1 | a);
-      t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t;
-      return ((t ^ t >>> 14) >>> 0) / 4294967296;
-    };
-  }
-
-  function buildWeights() {
-    var off = document.createElement('canvas');
-    off.width = N; off.height = N;
-    var o = off.getContext('2d');
-    var family = '"Familjen Grotesk", "Helvetica Neue", Arial, sans-serif';
-    var fontSize = 48;
-    o.font = '600 ' + fontSize + 'px ' + family;
-    var w = o.measureText(LABEL).width;
-    if (w > 58) { fontSize = Math.floor(fontSize * 58 / w); o.font = '600 ' + fontSize + 'px ' + family; }
-    o.textAlign = 'center';
-    o.textBaseline = 'middle';
-    o.fillStyle = '#000';
-    o.fillText(LABEL, N / 2, N / 2 + 1);
-    var data = o.getImageData(0, 0, N, N).data;
-    var out = new Float32Array(N * N);
-    for (var i = 0; i < N * N; i++) {
-      var a = data[i * 4 + 3] / 255;
-      a = a > 0.45 ? 1 : a * 0.4;  // sharpen the letter edges
-      out[i] = DARK + (1 - DARK) * a;
-    }
-    return out;
-  }
-
-  function reset() {
-    counts = new Float32Array(N * N);
-    flash = new Float32Array(N * N);
-    rand = mulberry32(5);
-    stepsDone = 0;
-  }
-
-  function step() {
-    for (var k = 0; k < TRIALS_PER_STEP; k++) {
-      var i = (rand() * N * N) | 0;
-      if (rand() < weights[i]) { counts[i] += 1; flash[i] = 1; }
-    }
-    stepsDone++;
-  }
-
-  function resize() {
-    var css = canvas.getBoundingClientRect().width || 240;
-    var dpr = window.devicePixelRatio || 1;
-    canvas.width = Math.round(css * dpr);
-    canvas.height = Math.round(css * dpr);
-    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-    size = css;
-  }
-
-  function draw(withFlash) {
-    var max = 0;
-    for (var j = 0; j < counts.length; j++) if (counts[j] > max) max = counts[j];
-    var norm = Math.max(4, max * 0.85);
-    var pitch = size / N;
-    var cell = pitch * 0.8;
-    ctx.clearRect(0, 0, size, size);
-    for (var y = 0; y < N; y++) {
-      for (var x = 0; x < N; x++) {
-        var i = y * N + x;
-        var px = x * pitch, py = y * pitch;
-        ctx.globalAlpha = 1;
-        ctx.fillStyle = COLORS.pixel;
-        ctx.fillRect(px, py, cell, cell);
-        var v = Math.min(1, counts[i] / norm);
-        if (withFlash && flash[i] > v) v = flash[i];
-        if (v > 0) {
-          ctx.globalAlpha = 0.14 + 0.86 * v;
-          ctx.fillStyle = COLORS.photon;
-          ctx.fillRect(px, py, cell, cell);
-        }
-      }
-    }
-    ctx.globalAlpha = 1;
-  }
-
-  function frame(t) {
-    if (!startTime) startTime = t;
-    var due = Math.min(TOTAL_STEPS, Math.floor((t - startTime) / DURATION * TOTAL_STEPS));
-    while (stepsDone < due) step();
-    draw(true);
-    for (var i = 0; i < flash.length; i++) flash[i] *= 0.78;
-    if (stepsDone < TOTAL_STEPS) {
-      requestAnimationFrame(frame);
-    } else {
-      draw(false);
-      running = false;
-    }
-  }
-
-  function run() {
-    if (running) return;
-    reset();
-    if (reduceMotion) {
-      while (stepsDone < TOTAL_STEPS) step();
-      draw(false);
-      return;
-    }
-    running = true;
-    startTime = 0;
-    requestAnimationFrame(frame);
-  }
-
-  function init() {
-    if (weights) return;
-    weights = buildWeights();
-    resize();
-    run();
-  }
-
-  canvas.addEventListener('click', run);
-  canvas.addEventListener('keydown', function (e) {
-    if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); run(); }
-  });
-  window.addEventListener('resize', function () {
-    if (!weights) return;
-    resize();
-    draw(false);
-  });
-
-  if (document.fonts && document.fonts.load) {
-    var done = false;
-    var go = function () { if (!done) { done = true; init(); } };
-    document.fonts.load('600 48px "Familjen Grotesk"').then(go, go);
-    setTimeout(go, 1500);
-  } else {
-    init();
-  }
-})();
-</script>
 </body>
 </html>
