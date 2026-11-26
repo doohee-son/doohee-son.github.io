@@ -1,18 +1,16 @@
 /* Doo-Hee Son, personal academic site */
 
 :root {
-  --text: #1f2328;
-  --muted: #5f6b7a;
   --yonsei: #00205B;   /* Yonsei blue, official Pantone 281C */
   --mit: #750014;      /* MIT red, official web color */
-  --link: var(--yonsei);
-  --link-hover: var(--mit);
+  --text: #1f2328;
+  --muted: #5f6b7a;
   --rule: #e3e6ea;
   --card: #fafbfc;
   --bg: #ffffff;
-  --photon: #00205B;
   --pixel: #e8ebf3;
-  --serif: "Source Serif 4", Georgia, "Times New Roman", serif;
+  --display: "Cormorant Garamond", Garamond, Georgia, serif;
+  --sans: "IBM Plex Sans", "Helvetica Neue", Arial, sans-serif;
 }
 
 * { box-sizing: border-box; }
@@ -23,22 +21,21 @@ body {
   margin: 0;
   background: var(--bg);
   color: var(--text);
-  font-family: var(--serif);
-  font-optical-sizing: auto;
-  font-size: 1.0625rem;
-  line-height: 1.65;
+  font-family: var(--sans);
+  font-size: 1rem;
+  line-height: 1.7;
 }
 
 a {
-  color: var(--link);
+  color: var(--yonsei);
   text-decoration: underline;
   text-decoration-color: rgba(0, 32, 91, 0.3);
   text-decoration-thickness: 1px;
-  text-underline-offset: 0.18em;
+  text-underline-offset: 0.2em;
 }
-a:hover { color: var(--link-hover); text-decoration-color: var(--link-hover); }
+a:hover { color: var(--mit); text-decoration-color: var(--mit); }
 a:focus-visible, canvas:focus-visible {
-  outline: 2px solid var(--yonsei);
+  outline: 2px solid var(--mit);
   outline-offset: 3px;
   border-radius: 2px;
 }
@@ -46,7 +43,7 @@ a:focus-visible, canvas:focus-visible {
 p { margin: 0 0 1rem; }
 
 .container {
-  max-width: 58rem;
+  max-width: 60rem;
   margin: 0 auto;
   padding: 0 1.5rem;
 }
@@ -56,8 +53,8 @@ p { margin: 0 0 1rem; }
   position: sticky;
   top: 0;
   z-index: 10;
-  background: rgba(255, 255, 255, 0.96);
-  border-top: 4px solid var(--yonsei);
+  background: rgba(255, 255, 255, 0.97);
+  border-top: 4px solid var(--mit);
   border-bottom: 1px solid var(--rule);
 }
 .site-nav .container {
@@ -67,90 +64,97 @@ p { margin: 0 0 1rem; }
   gap: 1rem;
   min-height: 3.5rem;
 }
-.brand {
-  font-size: 1.25rem;
+.brand, .brand:hover {
+  font-family: var(--display);
+  font-size: 1.5rem;
+  line-height: 1;
   color: var(--text);
+  text-decoration: none;
   white-space: nowrap;
 }
-.brand, .brand:hover { color: var(--text); text-decoration: none; }
 .brand b { font-weight: 700; color: var(--yonsei); }
-.brand span { font-weight: 300; }
+.brand span { font-weight: 500; }
 .nav-links {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.25rem 1.5rem;
+  gap: 0.25rem 1.75rem;
   margin: 0 0 0 auto;
   padding: 0;
   list-style: none;
+  font-weight: 500;
+  font-size: 0.95rem;
 }
-.nav-links a { color: var(--text); text-decoration: none; }
-.nav-links a { display: inline-block; padding: 0.15rem 0; border-bottom: 2px solid transparent; }
-.nav-links a:hover { color: var(--mit); text-decoration: none; }
-.nav-links a[aria-current="page"] { color: var(--yonsei); font-weight: 600; border-bottom-color: var(--mit); }
+.nav-links a {
+  display: inline-block;
+  padding: 0.15rem 0;
+  color: var(--text);
+  text-decoration: none;
+  border-bottom: 2px solid transparent;
+}
+.nav-links a:hover { color: var(--mit); }
+.nav-links a[aria-current="page"] { color: var(--mit); border-bottom-color: var(--mit); }
 
-main.container { padding-top: 3.25rem; padding-bottom: 4.5rem; }
+main.container { padding-top: 3.5rem; padding-bottom: 4.5rem; }
 
 /* Headings */
 .name {
-  font-size: 2.75rem;
-  line-height: 1.1;
-  margin: 0 0 0.35rem;
-  font-weight: 300;
+  font-family: var(--display);
+  font-size: 3.75rem;
+  font-weight: 500;
+  line-height: 1;
   letter-spacing: -0.01em;
+  margin: 0 0 0.6rem;
 }
 .name b { font-weight: 700; color: var(--yonsei); }
 .tagline {
-  color: var(--muted);
-  font-size: 1.125rem;
-  margin: 0 0 2rem;
+  font-size: 1.05rem;
+  color: var(--mit);
+  font-weight: 500;
+  margin: 0 0 2.25rem;
 }
 .page-title {
-  font-size: 2.5rem;
-  font-weight: 400;
-  line-height: 1.15;
-  margin: 0 0 1.5rem;
+  font-family: var(--display);
+  font-size: 3.25rem;
+  font-weight: 600;
+  line-height: 1.05;
   color: var(--yonsei);
+  margin: 0 0 1.75rem;
 }
 h2 {
-  font-size: 1.5rem;
-  font-weight: 600;
-  line-height: 1.25;
+  font-family: var(--display);
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1.15;
   color: var(--yonsei);
-  margin: 3.25rem 0 1.1rem;
+  margin: 3.5rem 0 1.25rem;
 }
 h2::after {
   content: "";
   display: block;
-  width: 2.25rem;
+  width: 2.75rem;
   height: 3px;
-  margin-top: 0.45rem;
+  margin-top: 0.5rem;
   background: var(--mit);
-}
-h3 {
-  font-size: 1.2rem;
-  font-weight: 600;
-  line-height: 1.35;
-  margin: 0 0 0.2rem;
 }
 
 /* About page */
 .profile {
   float: right;
-  width: 15rem;
-  margin: 0.35rem 0 1.5rem 2.5rem;
+  width: 18.5rem;
+  margin: 0.25rem 0 1.5rem 2.75rem;
 }
 .profile img {
   display: block;
   width: 100%;
   aspect-ratio: 3 / 4;
   object-fit: cover;
-  border-radius: 6px;
-  box-shadow: 0 1px 2px rgba(31, 35, 40, 0.12), 0 4px 14px rgba(31, 35, 40, 0.08);
+  border-radius: 4px;
+  box-shadow: 0 1px 2px rgba(31, 35, 40, 0.12), 0 6px 18px rgba(31, 35, 40, 0.1);
   background: var(--pixel);
 }
 .profile figcaption {
-  margin-top: 0.75rem;
-  font-size: 0.9rem;
+  margin-top: 0.8rem;
+  font-size: 0.85rem;
   line-height: 1.5;
   color: var(--muted);
   text-align: center;
@@ -160,11 +164,12 @@ h3 {
 .contact-card {
   display: inline-block;
   margin: 0.5rem 0 0;
-  padding: 0.9rem 1.25rem;
+  padding: 0.9rem 1.3rem;
   border: 1px solid var(--rule);
-  border-radius: 8px;
+  border-left: 4px solid var(--mit);
+  border-radius: 6px;
   background: var(--card);
-  font-size: 1rem;
+  font-size: 0.95rem;
 }
 .contact-card ul { list-style: none; margin: 0; padding: 0; }
 .contact-card li {
@@ -179,7 +184,7 @@ h3 {
   height: 1rem;
   position: relative;
   top: 0.15rem;
-  color: var(--yonsei);
+  color: var(--mit);
 }
 .contact-card .sep { color: var(--muted); margin: 0 0.35rem; }
 .contact-card .note { color: var(--muted); }
@@ -192,11 +197,11 @@ h3 {
   display: grid;
   grid-template-columns: 6.5rem 1fr;
   gap: 1rem;
-  padding: 0.45rem 0;
+  padding: 0.5rem 0;
   border-bottom: 1px solid var(--rule);
 }
 .news li:last-child { border-bottom: 0; }
-.news time { color: var(--muted); font-variant-numeric: tabular-nums; }
+.news time { color: var(--mit); font-weight: 600; font-variant-numeric: tabular-nums; }
 
 /* Publications */
 .pub-list { list-style: none; margin: 0; padding: 0; }
@@ -204,39 +209,47 @@ h3 {
   display: grid;
   grid-template-columns: 7rem 1fr;
   gap: 1.25rem;
-  padding: 0.8rem 0;
+  padding: 0.85rem 0;
 }
 .badge {
   display: block;
   align-self: start;
   margin-top: 0.2rem;
   padding: 0.2rem 0.4rem;
-  border-radius: 4px;
+  border-radius: 3px;
   background: var(--yonsei);
   color: #fff;
-  font-size: 0.8rem;
+  font-size: 0.75rem;
   font-weight: 600;
-  line-height: 1.35;
+  line-height: 1.4;
   text-align: center;
   text-decoration: none;
 }
 .badge.journal { background: var(--mit); }
-.pub-title { font-weight: 600; line-height: 1.45; }
-.pub-authors { color: var(--text); font-size: 1rem; }
-.pub-authors b { font-weight: 700; color: var(--yonsei); text-decoration: underline; text-decoration-color: var(--mit); text-underline-offset: 0.2em; text-decoration-thickness: 2px; white-space: nowrap; }
-.pub-venue { color: var(--muted); font-size: 1rem; }
+.pub-title { font-weight: 600; line-height: 1.5; }
+.pub-authors { font-size: 0.95rem; }
+.pub-authors b {
+  font-weight: 700;
+  color: var(--yonsei);
+  text-decoration: underline;
+  text-decoration-color: var(--mit);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 0.22em;
+  white-space: nowrap;
+}
+.pub-venue { color: var(--muted); font-size: 0.95rem; }
 .pill {
   display: inline-block;
   margin-left: 0.4rem;
-  padding: 0 0.5rem;
-  border: 1px solid var(--rule);
+  padding: 0 0.55rem;
+  border: 1px solid rgba(117, 0, 20, 0.35);
   border-radius: 999px;
-  font-size: 0.8rem;
-  line-height: 1.6;
-  color: var(--muted);
+  font-size: 0.75rem;
+  line-height: 1.65;
+  color: var(--mit);
   vertical-align: 0.1em;
 }
-.pub-note { color: var(--muted); font-size: 0.95rem; margin-top: 1rem; }
+.pub-note { color: var(--muted); font-size: 0.9rem; margin-top: 1rem; }
 .more-link { margin-top: 0.75rem; }
 
 /* Research page */
@@ -250,51 +263,52 @@ h3 {
 .array canvas { display: block; width: 15rem; height: 15rem; cursor: pointer; }
 .array figcaption {
   margin-top: 0.6rem;
-  font-size: 0.875rem;
+  font-size: 0.82rem;
   line-height: 1.45;
   color: var(--muted);
 }
-.project { margin-top: 3.5rem; }
+.project { margin-top: 4rem; }
 .project h2 { margin-top: 0; }
+.project .period { color: var(--mit); font-weight: 600; margin: 0 0 0.9rem; }
+.project .credit { color: var(--muted); font-size: 0.95rem; }
 .nobr { white-space: nowrap; }
-.project .period { color: var(--muted); margin: 0 0 0.85rem; }
-.project .credit { color: var(--muted); font-size: 1rem; }
 
 .tapeouts {
   width: 100%;
   border-collapse: collapse;
   margin-top: 1rem;
-  font-size: 1rem;
+  font-size: 0.95rem;
   line-height: 1.45;
 }
 .tapeouts th {
   text-align: left;
   font-weight: 600;
+  color: var(--yonsei);
   padding: 0.45rem 1rem 0.45rem 0;
-  border-bottom: 2px solid var(--yonsei);
+  border-bottom: 2px solid var(--mit);
 }
 .tapeouts td {
-  padding: 0.55rem 1rem 0.55rem 0;
+  padding: 0.6rem 1rem 0.6rem 0;
   border-bottom: 1px solid var(--rule);
   vertical-align: top;
 }
-.tapeouts td:first-child { white-space: nowrap; color: var(--muted); font-variant-numeric: tabular-nums; }
+.tapeouts td:first-child { white-space: nowrap; color: var(--mit); font-weight: 600; font-variant-numeric: tabular-nums; }
 
 /* Footer */
 .site-footer {
-  background: var(--yonsei);
-  border-top: 3px solid var(--mit);
-  color: #dbe3f1;
-  font-size: 0.9rem;
-  padding: 0.9rem 0;
+  background: var(--mit);
+  color: #f6e7ea;
+  font-size: 0.85rem;
+  padding: 1rem 0;
   text-align: center;
 }
 
 @media (max-width: 720px) {
   main.container { padding-top: 2.25rem; }
-  .name { font-size: 2.25rem; }
-  .page-title { font-size: 2rem; }
-  .profile { float: none; width: 12rem; margin: 0 0 1.75rem; }
+  .name { font-size: 2.9rem; }
+  .page-title { font-size: 2.6rem; }
+  h2 { font-size: 1.75rem; }
+  .profile { float: none; width: 15rem; margin: 0 0 1.75rem; }
   .profile figcaption { text-align: left; }
   .contact-card { display: block; }
   .news li { grid-template-columns: 1fr; gap: 0; }
@@ -306,8 +320,4 @@ h3 {
   .tapeouts thead { display: none; }
   .tapeouts tr { display: block; padding: 0.6rem 0; border-bottom: 1px solid var(--rule); }
   .tapeouts td { display: block; border: 0; padding: 0; }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  * { scroll-behavior: auto !important; }
 }
